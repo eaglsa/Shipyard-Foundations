@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>K8s Deployment Verified</title>
+    <title>K8s Environment Test</title>
     <style>
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -16,32 +16,52 @@
         }
         .card {
             background: white;
-            padding: 2rem;
-            border-radius: 12px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            padding: 2.5rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
             text-align: center;
-            border-top: 5px solid #326ce5; /* Kubernetes Blue */
+            border-top: 8px solid #326ce5;
+            max-width: 400px;
         }
-        h1 { color: #326ce5; margin-bottom: 0.5rem; }
-        p { color: #666; }
-        .status {
-            display: inline-block;
-            padding: 5px 15px;
-            background: #e7f3ff;
-            color: #326ce5;
-            border-radius: 20px;
+        h1 { color: #326ce5; margin-bottom: 1rem; font-size: 1.8rem; }
+        .label { color: #888; text-transform: uppercase; font-size: 0.7rem; letter-spacing: 1px; margin-bottom: 5px; }
+        .name-display {
+            font-size: 1.5rem;
+            color: #1a1a1a;
             font-weight: bold;
-            font-size: 0.9rem;
+            margin-bottom: 1.5rem;
+            padding: 10px;
+            background: #f8f9fa;
+            border-radius: 8px;
+        }
+        .status-badge {
+            display: inline-block;
+            padding: 6px 16px;
+            background: #e6fffa;
+            color: #2c7a7b;
+            border: 1px solid #b2f5ea;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 0.85rem;
         }
     </style>
 </head>
 <body>
     <div class="card">
-        <h1>Nginx on Kubernetes</h1>
-        <p>This page is being served from a <strong>KIND</strong> cluster.</p>
-        <div class="status">Deployment Active: 3 Replicas</div>
-        <p style="margin-top: 20px; font-size: 0.8rem; color: #999;">
-            Phase: Self-Healing Test Ready
+        <h1>Kubernetes Lab</h1>
+        
+        <div class="label">Current Student</div>
+        <div class="name-display">
+            $STUDENT_NAME
+        </div>
+
+        <div class="status-badge">
+            Status: 3 Replicas Healthy
+        </div>
+
+        <p style="margin-top: 25px; font-size: 0.75rem; color: #aaa;">
+            Infrastructure: KIND Cluster (Local)<br>
+            Server: Nginx Alpine
         </p>
     </div>
 </body>

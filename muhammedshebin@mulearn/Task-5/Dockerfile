@@ -1,14 +1,13 @@
-# Use the lightweight Nginx Alpine image as the base
 FROM nginx:alpine
 
-# Remove the default Nginx static assets to keep it clean
+# 1. Clean out the default Nginx directory
 RUN rm -rf /usr/share/nginx/html/*
 
-# Copy your custom index.html into the Nginx default public directory
-# The path /usr/share/nginx/html/ is where Nginx looks for files by default
-COPY index.html /usr/share/nginx/html/index.html
+# 2. Copy your index.html as a template
+# Nginx will look here, swap the variables, and put it in /usr/share/nginx/html/
+COPY index.html /etc/nginx/templates/index.html.template
 
-# Expose port 80 (standard HTTP port)
+# 3. Ensure permissions are wide open so Nginx can read it
+RUN chmod 644 /etc/nginx/templates/index.html.template
+
 EXPOSE 80
-
-# The default command for the nginx image will automatically start the server
