@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>K8s Deployment Verified</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f2f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .card {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            text-align: center;
+            border-top: 5px solid #326ce5; /* Kubernetes Blue */
+        }
+        h1 { color: #326ce5; margin-bottom: 0.5rem; }
+        p { color: #666; }
+        .status {
+            display: inline-block;
+            padding: 5px 15px;
+            background: #e7f3ff;
+            color: #326ce5;
+            border-radius: 20px;
+            font-weight: bold;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h1>Nginx on Kubernetes</h1>
+        <p>This page is being served from a <strong>KIND</strong> cluster.</p>
+        <div class="status">Deployment Active: 3 Replicas</div>
+        <p style="margin-top: 20px; font-size: 0.8rem; color: #999;">
+            Phase: Self-Healing Test Ready
+        </p>
+    </div>
+</body>
+</html>
